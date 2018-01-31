@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="page-heading">
+		My Great Company
+	</div>
+	<div class="login-wrapper">
+		<div class="login">
+			<div class="login-heading">
+				Customer login
+			</div>
+			<div class="input-row">
+				<div class="icon user"></div>
+				<input class="field" id="user" type="text" />
+			</div>
+			<div class="input-row">
+				<div class="icon lock"></div>
+				<input class="field" id="password" type="password" />
+			</div>
+			<button class="login-button">Login</button>
+		</div>
+	</div>
+
+	<!-- Start from the login page created last week. Source code is on GitHub. To the end of the HTML page add a link to JQuery. -->
+	<script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+
+	<!-- Create a script element after your JQuery link at the very end of the HTML body. Inside, define a function called login(). Make the function get the user's name and password from the text fields on the page and store them in variables called user and password. -->
+	<script>
+		// I have a comand, da function called click and a function without a name. 
+		$('.login-button').click(function () {
+			var user = $('#user').val();
+			console.log(user);
+			var password = $('#password').val();
+			console.log(password);
+
+			//class example
+			// if (user !== 'john') {
+			// 		$('#user').addClass('error');
+			// 		console.log('Bad');
+			// 	} else {
+			// 		$('#user').removeClass('error');
+			// 		console.log('good');
+			// 	}
+			// };
+
+			if (user == '' && password == '' || user == 'opensesame') {
+				console.log('Bad');
+				$('.field').addClass('error');
+			} else {
+				$('.field').removeClass('error');
+				console.log('good');
+			}
+		});
+
+		// $('.login-button').click(login);
+
+		//   Use JQuery in your script to set the click event of the login button to your function.
+		// $('.login-button').click(login()) {
+
+		// In your CSS file, create a class called error which once added to any textfield gives it a 3px wide red border.
+		// Do the same thing as above with the password. Check wheter the password is "opensesame". If not, give the text field an error class.
+
+		// if ($('input:password') == 'opensesame') {
+		// 	$('.field').addClass('.error');
+		// 	console.log('err');
+		// }
+		// if ($('#user').not('') && $('#password').not(":empty") ){
+		// 	// $('.field').removeClass('.error');
+		// 	console.log('noerr');
+		// }
+		// }
+		// )
+		// ;
+	</script>
+</body>
+
+</html>

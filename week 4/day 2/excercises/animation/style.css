@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+}
+
+button{
+margin-bottom: 1000px;
+}
+/* .square {
+    width: 250px;
+    height: 250px;
+    left: 0px;
+    background-color: goldenrod;
+    margin: 20px;
+    position: relative;
+} */
+
+/* #progress {
+    width: 100%;
+    padding: 200px;
+} */
+
+.bar {
+    width: 0%;
+    height: 2rem;
+    background-color: antiquewhite;
+    margin-bottom: 20px;
+    font-size: 20px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery.appear.js"></script>
+
+</head>
+
+<body>
+
+    <button id="my-btn">Click me</button>
+    <div class="progress">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+        <div id="bar4" class="bar"></div>
+    </div>
+
+    <!-- <div id="square" class="square" >
+
+    </div> -->
+
+
+
+    <script>
+        $('.progress').appear();
+        $('.progress').on('appear', function () {
+            progress('#bar1', '50%');
+            progress('#bar2', '34%');
+            progress('#bar3', '54%');
+            progress('#bar4', '23%');
+        });
+
+        function progress(barID, value) {
+            $(barID).animate({
+                'width': value
+            }, 2000);
+        };
+
+        // $("#my-btn").click(function () {
+        //     progress('#bar1', '50%');
+        //     progress('#bar2', '34%');
+        //     progress('#bar3', '54%');
+        //     progress('#bar4', '23%');
+        //     //         $('#square').animate(
+        //     // {'left':'+=200px'},
+        //     // 2000
+        //     //         )
+        //     // $('#square').fadeToggle(2000);
+        // });
+    </script>
+</body>
+
+</html>

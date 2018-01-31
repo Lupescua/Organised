@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+
+    <script>
+        var nr = 1;
+        var name = 'john';
+        var fn = function () {
+            return ' hello';
+        };
+
+        var list = [
+            [1, 2, 3, 4], 2, 3, 4
+        ];
+        var person = {
+            'first': 'Homer',
+            'second': 'Simpson',
+            'age': 39,
+            'wife': {
+                'first': 'Marge',
+                'second': 'Simpson',
+                'age': 36
+            },
+        };
+
+        //In order to call something from this object you do:
+        person.first;
+        person['first'];
+        person.wife.first;
+        person['wife']['first'];
+
+
+        //Case we have it in a list
+        var list = [person, 2, 3, 4];
+        //calling is like this
+        list[0]['wife']['first'];
+        list[0].wife.first;
+
+        var array = {
+            0: 1,
+            1: 2,
+            2: 3
+        };
+
+        var users = {
+            'podlomar': {
+                'first': 'Martin',
+                'last': 'Podloucky'
+            },
+            'john28': {
+                'first': 'John',
+                'last': 'Doe'
+            },
+            'jane': {
+                'first': 'Jane',
+                'last': 'Austin'
+            },
+        };
+
+        var login = $('input').val(); // .....
+        if (user[login] !== undefined) {};
+
+        //the way I check for it
+        user[login].first
+    </script>
+
+</body>
+
+</html>
