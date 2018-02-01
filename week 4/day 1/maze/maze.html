@@ -5,10 +5,117 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Maze</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="maze.css" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	    crossorigin="anonymous"></script>
+    <!-- <script src="main.js"></script> -->
 </head>
 <body>
+<!-- So, what do I want:
+1. Design: Starting point, End point, box in which it all takes place. A start button (covers 80% of the workboard). A End game popup (probably made with alert)
+2. Mouse follower
+3. reactive stuck like on-hover
+4. maybe a lives counter -->
+
+
+<button onclick="animateDiv()">Click Me</button>
+
+<div id="box">
+        <!-- This text is enclosed in a box. -->
+    <div id="start">Start</div>
+    <div id="cube"></div>
+    <div id="end">End</div>
+</div>
+
+        <!-- <div id ="container">
+        <div id ="animate"></div>
+        </div> -->
+
+        <script>
+
+            //this goes on a diagonal
+
+//         function myMove() {
+//           var elem = document.getElementById("cube");
+//           var pos = 0;
+//           var id = setInterval(frame, 5);
+//           function frame() {
+//             if (pos == 350) {
+//               clearInterval(id);
+//               console.log(pos);
+//             } else {
+//               pos++;
+//               console.log(pos);
+//               elem.style.top = pos + 'px';
+//               elem.style.left = pos + 'px';
+//             }
+//           }
+//         }
+
+//-----------------------------------------
+
+        $(document).ready(function(){
+    animateDiv();
+
+});
+
+
+function makeNewPosition(){
+
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $('#box').height() - 10;
+    console.log(h);
+    var w = $('#box').width() - 10;
+    console.log(w);
+
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+
+    return [nh,nw];
+
+};
+
+function animateDiv(){
+    var newq = makeNewPosition();
+    console.log(newq);
+    $('#code').animate({ top: newq[0], left: newq[1] }, function(){
+      animateDiv();
+      console.log('#code');
+    });
+
+};
+
+
+
+
+// // this makes the div run around the given screen
+// function animateDiv(){
+//     var newq = makeNewPosition();
+//     var oldq = $('#code').offset();
+//     var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+//     $('#code').animate({ top: newq[0], left: newq[1] }, speed, function(){
+//       animateDiv();
+//     });
+
+// };
+
+// function calcSpeed(prev, next) {
+
+//     var x = Math.abs(prev[1] - next[1]);
+//     var y = Math.abs(prev[0] - next[0]);
+
+//     var greatest = x > y ? x : y;
+
+//     var speedModifier = 0.1;
+
+//     var speed = Math.ceil(greatest/speedModifier);
+
+//     return speed;
+
+// }
+        </script>
+
     <!-- What does the game consist of?
     playing field
     obstacles - elements styled and positioned within the field with CSS
@@ -22,5 +129,6 @@
     Prevent cheating: surround the playfield with 4 more boxes so that it is perfectly wrapped in them. When the mouse moves over them, the game is over.
 
     Add multiple levels: the layout of the obstacles can change immediatelly for example just by changing a class of the playing field. Specify multiple different layouts with CSS and switch them when needed. -->
+
 </body>
 </html>
