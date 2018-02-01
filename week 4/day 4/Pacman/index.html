@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,86 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="jquery-3.3.1.min.js"></script>
     <script src="main.js"></script>
+
 </head>
+
 <body>
-<div id="pacman" class='closed'></div>
-<script>
-$(document).click(function(event){
-    $('#pacman').toggleClass('mouth');
-    console.log('it should open it-s mouth');
-});
+    <div id="pacman" class='right_closed'></div>
+
+    <script>
+        // math.round(math.random()*5) + 60
 
 
-</script>
+        function update(pal, dir) {
+            if (pal.hasClass(dir)) {
+                pal.toggleClass(dir + '_open ' + dir + '_closed');
+            } else {
+                pal.removeClass();
+                pal.addClass(dir);
+                pal.addClass(dir + '_open');
+            }
+        }
+
+        // update()
+        $(document).keydown(function (event) {
+            console.log('it should open it-s open');
+            var key = event.keyCode;
+            var pac = $('#pacman');
+
+            if (pac.position().left < 0) {
+                pac.css({
+                        'left': '=64px'
+                    });
+
+                // pac.toggle("bounce", {
+                //     times: 3
+                // }, "slow");
+
+                console.log('Bounce');
+
+                // Flip Image
+                // transform: scaleX(-1);
+                // filter: FlipH;
+            } else {
+                // right arrow	39
+                if (key === 39) {
+                    pac.css({
+                        'left': '+=64px'
+                    });
+                    update(pac, 'right');
+                }
+                //left arrow	37
+                else if (key === 37) {
+                    pac.css({
+                        'left': '-=64px'
+                    });
+                    update(pac, 'left');
+                }
+                // up arrow	38
+                else if (key === 38) {
+                    pac.css({
+                        'top': '-=64px'
+                    });
+                    update(pac, 'up');
+                }
+                // down arrow	40
+                else if (key === 40) {
+                    pac.css({
+                        'top': '+=64px'
+                    });
+                    update(pac, 'down');
+                }
+            }
+        });
+
+        //  I tried changing position with css. e.preventDefault resets default, and left sets left to 30px
+        // $('.left').click(function(e) {
+        //         e.preventDefault();
+        //         pac.animate({
+        //             'left' : '30px'
+        //         });
+        //     });
+    </script>
 </body>
+
 </html>

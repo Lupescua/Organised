@@ -1,12 +1,51 @@
-#pacman{
-    margin: 0;
-    position: relative;
+body {
+background-image: url('tile-empty.png');
+/* padding:0;
+margin:0; */
+/* width: 64px; */
+/* height: 64px; */
+/* border-image-repeat: repeat; */
+/* background-repeat: repeat; */
 }
 
-.closed{
-    background-image: url('/img/pacman1.png');
-}
-.mouth{
-    background-image: url('/img/pacman2.png');
+#pacman {
+    margin: 2px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 64px;
+    height: 64px;
 }
 
+
+.right_closed {
+    background-image: url('pclosed-right.png');
+}
+
+.right_open {
+    background-image: url('popen-right.png');
+}
+
+.left_closed {
+    background-image: url('pclosed-left.png');
+}
+
+.left_open {
+    background-image: url('popen-left.png');
+}
+
+.up_closed {
+    background-image: url('pclosed-up.png');
+}
+
+.up_open {
+    background-image: url('popen-up.png');
+}
+
+.down_closed {
+    background-image: url('pclosed-down.png');
+}
+
+.down_open {
+    background-image: url('popen-down.png');
+}
