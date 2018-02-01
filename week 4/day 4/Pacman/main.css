@@ -1,0 +1,12 @@
+#pacman{
+    margin: 0;
+    position: relative;
+}
+
+.closed{
+    background-image: url('/img/pacman1.png');
+}
+.mouth{
+    background-image: url('/img/pacman2.png');
+}
+
