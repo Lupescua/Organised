@@ -71,7 +71,7 @@ protected function isDark(){
 
 function __toString(){
     echo '<div class="board">';
-    foreach($rowes as $row->$col)
+    foreach($this->rowes as $row->$col){
 for($this->row=1;$this->row<=8;$this->row++){
     echo '<div class="row">';
     for($this->col=1;$this->col<=8;$this->col++){
@@ -84,13 +84,16 @@ for($this->row=1;$this->row<=8;$this->row++){
         }
     }
     echo '</div>';
-}
+}}
 }
 
-function __construct($row){
-    $this->row = $x;
-    $this->y_coord = $y;
-    $this->piece = $piece;
+function __construct($rowes){
+    foreach($rowes as $row->$colom){
+        $this->x_coord = $row ;
+        foreach($colom as $col->$piece){
+        $this->y_coord = $col;
+        $this->piece = $piece;}
+    }
 }
 
 
@@ -116,7 +119,7 @@ $board1 = new board([
     8=>[8=>'r',7=>'p',2=>'P',1=>'R',],
 ]);
 
-echo $board1;
+// echo $board1;
 ?>
 
 

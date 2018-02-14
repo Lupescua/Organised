@@ -1,0 +1,31 @@
+1. Database instalation. It can contain multiple databases: http://localhost/phpmyadmin
+
+2.Create elements inside the database:
+Messages:
+    id : integer, unsigned, primari, A I ;
+    first_name : varchar, 127 length, null, null;
+    last_name : varchar, 127 length, null, null;
+    email : varchar, 127 length, null, null;
+    phone_nr : varchar, 64 length, null, null;-
+    text: text, null, null
+
+& Save
+
+3. gather data from POST
+
+require'../database.phpm
+    $first_name = $_POST ['first_name'];
+    $last_name = $_POST ['last_name'];
+    $email = $_POST ['email'];
+    $phone_nr = $_POST ['phone_nr'];
+    $text = $_POST ['text'];
+
+4. $query = "
+INSERT
+INTO `messages`
+(`first_name`,`last_name`,`email`,`phone_nr`,`text`)
+VALUES
+(?,?,?,?,?)";
+
+db_query = ($query [`first_name`,`last_name`,`email`,`phone_nr`,`text`]);
+
