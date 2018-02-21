@@ -70,27 +70,32 @@ protected function isDark(){
 
 
 function __toString(){
-    echo '<div class="board">';
-    foreach($this->rowes as $row->$col){
-for($this->row=1;$this->row<=8;$this->row++){
-    echo '<div class="row">';
-    for($this->col=1;$this->col<=8;$this->col++){
-        if(isDark()){
-            echo '<div class="dark"></div>';
+    $html = '<div class="board">';
+    foreach($this->rowes as $row => $col){
+for($this->row=1;$this->row < 9;$this->row++){
+    $html .= '<div class="row">';
+    for($this->col=1;$this->col<9;$this->col++){
+        if($this->isDark()){
+            $html .= '<div class="dark"></div>';
             // var_dump('even');
         }else {
-            echo '<div class="light"></div>';
+            $html .= '<div class="light"></div>';
             // var_dump('odd');
         }
     }
-    echo '</div>';
+    $html .= '</div>';
+
 }}
+
+    return $html;
 }
 
-function __construct($rowes){
-    foreach($rowes as $row->$colom){
+function __construct($rowes)
+{
+    $this->rowes = $rowes;
+    foreach($rowes as $row => $colom){
         $this->x_coord = $row ;
-        foreach($colom as $col->$piece){
+        foreach($colom as $col => $piece){
         $this->y_coord = $col;
         $this->piece = $piece;}
     }
@@ -108,6 +113,7 @@ echo $a2;
 echo $b2;
 echo $c2;
 echo $d2;
+
 $board1 = new board([
     1=>[8=>'r',7=>'p',2=>'P',1=>'R',],
     2=>[8=>'n',7=>'p',2=>'P',1=>'N',],
@@ -119,7 +125,7 @@ $board1 = new board([
     8=>[8=>'r',7=>'p',2=>'P',1=>'R',],
 ]);
 
-// echo $board1;
+echo $board1;
 ?>
 
 
