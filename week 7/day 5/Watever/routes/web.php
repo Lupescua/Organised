@@ -12,18 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('wellcome');
 });
 
-Route::get('/', 'HomeController@index') ;
-Route::get('/blog', 'Blog\BlogController@index') ;
-Route::get('/portfolio', 'PortfolioController@index') ;
-Route::get('/contact', 'ContactController@index') ;
 
-/**
- * '/'home
- * '/contact'
- * '/blog'
- * '/portfolio'
- */
-
+Route::get('/', 'MainController@home') ;
+Route::get('/album', 'MainController@album') ;
+Route::get('/pricing', 'MainController@pricing') ;
