@@ -8,14 +8,14 @@ class MainController extends Controller
 {
     //
     public function home() {
-return 'Crazy';
+return view('home');
     }
 
     public function album() {
-        return 'Blue';
+        return view('album');
     }
 
     public function pricing() {
-        return 'Alladin';
+        return view('pricing');
     }
 }

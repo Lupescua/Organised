@@ -7,6 +7,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    public function pets()
+    {
+        return $this->hasMany('App\Pet','user_id');
+    }
     use Notifiable;
 
     /**

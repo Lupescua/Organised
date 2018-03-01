@@ -20,10 +20,8 @@ Route::get('/blog', 'Blog\BlogController@index') ;
 Route::get('/portfolio', 'PortfolioController@index') ;
 Route::get('/contact', 'ContactController@index') ;
 
-/**
- * '/'home
- * '/contact'
- * '/blog'
- * '/portfolio'
- */
+Route::get('/form', 'FormController@index') ;
+Route::get('/form/create', 'FormController@create') ;
+Route::post('/form', 'FormController@store') ;
+
 
